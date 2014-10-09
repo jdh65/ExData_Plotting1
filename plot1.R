@@ -1,0 +1,6 @@
+projectdata=read.table("household_power_consumption.txt",header=TRUE,sep=";",na.strings="?")
+subsetdata=subset(projectdata,Date=="1/2/2007"|Date=="2/2/2007")
+rm(projectdata)
+png(file="plot1.png")
+hist(subsetdata$Global_active_power,col="red",main="Global Active Power",xlab="Global Active Power (kilowatts)",ylim=c(0,1200))
+dev.off()
